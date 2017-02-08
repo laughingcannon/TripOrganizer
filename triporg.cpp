@@ -56,7 +56,7 @@ class logistic:public endpoints
 	}
 };
 
-class accommo:public logistic
+class accommo:public logistic //Multi-level inhertance
 {
 	int livstand;
 	int foodbud;
