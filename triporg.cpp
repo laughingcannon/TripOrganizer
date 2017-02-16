@@ -20,11 +20,11 @@ class endpoints
 	void outdata()
 	{
 		cout<<"\nSource:"<<source;
-		cout<<"\nDestination:"<<destination;
+		cout<<"\nDestination:"<<dest;
 	}
 };
 
-class logistic:public endpoints
+class logistic:public endpoints		//Class to take in travel details.
 {
 	char tramode[20];
 	
@@ -57,7 +57,7 @@ class logistic:public endpoints
 };
 
 class accommo:public logistic //Multi-level inhertance
-{
+{			      //This class manages the food and accommodation.
 	int livstand;
 	int foodbud;
 	int numdays;
@@ -65,7 +65,7 @@ class accommo:public logistic //Multi-level inhertance
 public:
 	accommo():livstand(2),foodbud(100),numdays(1){} //Constructor
 
-	friend accommo assignaccommo(accommo);
+	friend accommo assignaccommo(accommo);		//Friend function declaration
 	void total;
 
 	void outthree()
@@ -85,7 +85,7 @@ accommo assignaccommo(accommo A)  //Friend function
 		{
 		 cout<<"Please enter standard of accommodation (5 4 3 2):";
 		 cin>>A.livstand;
-		} while (A.livstand>5||A.livstand<2);
+		} while (A.livstand>5||A.livstand<2);			//Mandatory for accommodation standards to be between 2 and 5.
 
 		cout<<"Enter food budget (per member):";
 		cin>>A.foodbud;
@@ -105,7 +105,7 @@ void accommo::total()
 		t_total = trabud*members;
 
 		cout<<"Expenditure for all members:"
-		cout<<"\nAccomodation:"<<a_total; //
+		cout<<"\nAccomodation:"<<a_total;
 		cout<<"\nFood:"<<f_total;
 		cout<<"\nTravel:"<<t_total;
 
@@ -113,7 +113,7 @@ void accommo::total()
 
 int main()
 {
-	accommo a;
+	accommo a;	//Object of class accommo
 
 	cout<<"Program to Organize Your Trip Expenditure!\n"
 	a.indata();
@@ -123,7 +123,7 @@ int main()
 	cout<<"\nWould you like to the return journey to be counted, too?";
 	if(ch=='y'||ch=='Y');
 	{
-		++a;
+		++a;		//Operator overloading performed on object a.
 	}
 
  return 0;	
