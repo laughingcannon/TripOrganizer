@@ -57,9 +57,10 @@ class logistic:public endpoints		//Class to take in travel details.
 
 class accommo:public logistic //Multi-level inhertance
 {			      //This class manages the food and accommodation.
-	int livstand;
-	int foodbud;
-	int numdays;
+	
+	int livstand;         //Living standard
+	int foodbud;	      //Food budget
+	int numdays;	      //Number of days of stay
 
 public:
 	accommo():livstand(2),foodbud(100),numdays(1){} //Constructor
@@ -107,6 +108,8 @@ void accommo::total()
 		cout<<"\nAccomodation:"<<a_total;
 		cout<<"\nFood:"<<f_total;
 		cout<<"\nTravel:"<<t_total;
+		
+		cout<<"\n\nTOTAL EXPENDITURE:"<<a_total+f_total+t_total;
 
 }
 
