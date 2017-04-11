@@ -85,7 +85,7 @@ accommo assignaccommo(accommo A)  //Friend function
 		{
 		 cout<<"Please enter standard of accommodation (5 4 3 2):";
 		 cin>>A.livstand;
-		} while (A.livstand>5||A.livstand<2);			//Mandatory for accommodation standards to be between 2 and 5.
+		} while (A.livstand>5||A.livstand<2);	//Mandatory for accommodation standards to be between 2 and 5.
 
 		cout<<"Enter food budget (per member):";
 		cin>>A.foodbud;
